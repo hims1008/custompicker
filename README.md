@@ -11,7 +11,7 @@ Added feature to pick time with WheelView Widget
 
 # Here is date pick effect by gif
 
-![picker](./datepick.gif)
+![picker](./demo.gif)
 
 ## How to use
 

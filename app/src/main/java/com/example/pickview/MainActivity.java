@@ -1,4 +1,4 @@
-package com.trueapps.pickview;
+package com.example.pickview;
 
 import android.graphics.Color;
 import android.os.Bundle;

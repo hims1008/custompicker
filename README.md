@@ -42,7 +42,7 @@ Add more custom attributes
 
  ```java
     
-        <com.bruce.pickerview.LoopView
+        <com.custompicker.pickerview.LoopView
             android:id="@+id/loop_view"
             android:layout_width="200dp"
             android:layout_height="180dp"
@@ -71,7 +71,7 @@ Add more custom attributes
  ```
 
 # THANKS
- [androidWheelView](https://github.com/brucetoo/PickView)
+ [PickView](https://github.com/brucetoo/PickView)
 
 
 

@@ -1,8 +1,11 @@
 package com.example.pickview;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.demo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SelctorPicker selctorPicker = new SelctorPicker.Builder(MainActivity.this, new SelctorPicker.OnItemSelector() {
+                 SelctorPicker selctorPicker = new SelctorPicker.Builder(MainActivity.this, new SelctorPicker.OnItemSelector() {
                     @Override
                     public void onitemselector(String time) {
                         Toast.makeText(MainActivity.this, time, Toast.LENGTH_SHORT).show();
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         .textCancel("CANCEL")
                         .btnTextSize(16)
                         .viewTextSize(25)
+                        .setTypeface(ResourcesCompat.getFont(MainActivity.this,R.font.font2))
                         .colorCancel(Color.parseColor("#999999"))
                         .colorConfirm(Color.parseColor("#009900"))
                         .setList(list)

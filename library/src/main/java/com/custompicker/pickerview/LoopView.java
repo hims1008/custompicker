@@ -10,6 +10,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -63,6 +64,7 @@ public class LoopView extends View {
     private int mWidgetHeight;
     private int mCircularRadius;
     private int mWidgetWidth;
+    Typeface typeface;
 
 
     public Handler mHandler = new Handler(new Handler.Callback() {
@@ -138,18 +140,19 @@ public class LoopView extends View {
         }
         mTopBottomTextPaint.setColor(mTopBottomTextColor);
         mTopBottomTextPaint.setAntiAlias(true);
-        mTopBottomTextPaint.setTypeface(Typeface.MONOSPACE);
+        mTopBottomTextPaint.setTypeface(typeface);
         mTopBottomTextPaint.setTextSize(mTextSize);
 
         mCenterTextPaint.setColor(mCenterTextColor);
         mCenterTextPaint.setAntiAlias(true);
         mCenterTextPaint.setTextScaleX(1.05F);
-        mCenterTextPaint.setTypeface(Typeface.MONOSPACE);
+        mCenterTextPaint.setTypeface(typeface);
+
         mCenterTextPaint.setTextSize(mTextSize);
 
         mCenterLinePaint.setColor(mCenterLineColor);
         mCenterLinePaint.setAntiAlias(true);
-        mCenterLinePaint.setTypeface(Typeface.MONOSPACE);
+        mCenterLinePaint.setTypeface(typeface);
         mCenterLinePaint.setTextSize(mTextSize);
 
         measureTextWidthHeight();
@@ -401,6 +404,11 @@ public class LoopView extends View {
         cancelSchedule();
         int velocityFling = 20;
         mScheduledFuture = mExecutor.scheduleWithFixedDelay(new FlingRunnable(velocityY), 0, velocityFling, TimeUnit.MILLISECONDS);
+    }
+
+    public void setTypeface(Typeface typeface) {
+        this.typeface=typeface;
+
     }
 
     class LoopViewGestureListener extends android.view.GestureDetector.SimpleOnGestureListener {

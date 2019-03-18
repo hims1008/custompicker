@@ -55,6 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
+
                     app:textSize="25sp"
                     app:canLoop="false"/>
             </LinearLayout>

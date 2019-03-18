@@ -3,6 +3,7 @@ package com.custompicker.pickerview.popwindow;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -45,6 +46,7 @@ public class SelctorPicker extends PopupWindow implements View.OnClickListener{
     private int viewTextSize;
 
     List<String> meridianList = new ArrayList();
+    Typeface fontid =Typeface.MONOSPACE;
 
 
     public static class Builder {
@@ -65,6 +67,7 @@ public class SelctorPicker extends PopupWindow implements View.OnClickListener{
         private int btnTextSize = 16;//text btnTextsize of cancel and confirm button
         private int viewTextSize = 25;
         List meridianList;
+        Typeface typeface=Typeface.MONOSPACE;
 
         public Builder textCancel(String textCancel){
             this.textCancel = textCancel;
@@ -105,6 +108,12 @@ public class SelctorPicker extends PopupWindow implements View.OnClickListener{
         public SelctorPicker build(){
             return new SelctorPicker(this);
         }
+
+        public Builder setTypeface(Typeface font2) {
+            this.typeface = font2;
+            return this;
+
+        }
     }
 
 
@@ -118,6 +127,7 @@ public class SelctorPicker extends PopupWindow implements View.OnClickListener{
         this.btnTextsize = builder.btnTextSize;
         this.viewTextSize = builder.viewTextSize;
         this.meridianList =builder.meridianList;
+        this.fontid = builder.typeface;
         initView();
     }
 
@@ -169,9 +179,10 @@ public class SelctorPicker extends PopupWindow implements View.OnClickListener{
 
 
     private void initPickerViews(){
-
-
+        meridianLoopView.setTextSize(viewTextSize);
+        meridianLoopView.setTypeface(fontid);
         meridianLoopView.setDataList(meridianList);
+
         meridianLoopView.setInitPosition(meridianPos);
     }
 

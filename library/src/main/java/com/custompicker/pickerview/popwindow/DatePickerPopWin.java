@@ -311,7 +311,6 @@ public class DatePickerPopWin extends PopupWindow implements OnClickListener {
     public void showPopWin(Activity activity) {
 
         if (null != activity) {
-
             TranslateAnimation trans = new TranslateAnimation(
                     Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF,
                     0, Animation.RELATIVE_TO_SELF, 1,

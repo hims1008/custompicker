@@ -24,6 +24,7 @@ Add more custom attributes
                                .textCancel("CANCEL")
                                .btnTextSize(16)
                                .viewTextSize(25)
+                               .setTypeface(ResourcesCompat.getFont(MainActivity.this,R.font.font2))
                                .colorCancel(Color.parseColor("#999999"))
                                .colorConfirm(Color.parseColor("#009900"))
                                .setList(list)
